@@ -39,16 +39,16 @@ If we look at the price data of stETH and wETH we see they are very similar duri
 One has to  note that stETH is 1-1 backed with ETH so no real PEG danger exists. Yet the market forces who need fast capital may be tempted to sell their lots via swapping.
                 """)
     
-    l,r = st.columns(2)
+    #l,r = st.columns(2)
     fig = plot_scatter(prices,'DATE','MEAN_PRICE',c='SYMBOL', text='stETH and WETH vs USD')
     prices_single = prices.query('SYMBOL=="stETH"').merge(prices.query('SYMBOL=="WETH"'),how='left',on='DATE')
-    with l:
-        st.plotly_chart(fig,use_container_width=True)
+    #with l:
+    st.plotly_chart(fig,use_container_width=True)
     prices_single['MEAN_PRICE'] = prices_single['MEAN_PRICE_x']/prices_single['MEAN_PRICE_y']
 
     fig = plot_scatter(prices_single,'DATE','MEAN_PRICE',text='stETH vs WETH')
-    with r:
-        st.plotly_chart(fig,use_container_width=True)
+    #with r:
+    st.plotly_chart(fig,use_container_width=True)
     
     
     st.markdown("""
