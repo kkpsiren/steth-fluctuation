@@ -110,5 +110,5 @@ def plot_scatter(df,x,y, c=None,text=None):
                         showlegend = False),
                 row=1, col=1
             ) 
-    fig.update_layout(height=300, width=600, title_text=text)
+    fig.update_layout(height=600, width=600, title_text=text)
     return fig
